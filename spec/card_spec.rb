@@ -1,5 +1,6 @@
 require "minitest/spec"
 require "minitest/autorun"
+require "minitest/pride"
 
 require "card"
 
@@ -11,9 +12,9 @@ describe Card do
   it "has a suit" do
     card_value = card_values[0]
 
-    card_suits.each do |suit|
-      card = Card.new(card_value, suit)
-      assert_equal card.suit suit
+    card_suits.each do |card_suit|
+      card = Card.new(card_value, card_suit)
+      card.suit.must_equal card_suit
     end
 
   end
@@ -21,9 +22,9 @@ describe Card do
   it "has a value" do
     card_suit = card_suits[0]
 
-    card_values.each do |value|
-      card = Card.new(value, card_suit)
-      assert_equal card.value value
+    card_values.each do |card_value|
+      card = Card.new(card_value, card_suit)
+      card.value.must_equal card_value
     end
   end
 
