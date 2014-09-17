@@ -31,4 +31,18 @@ describe Card do
     end
   end
 
+  it "is equal to another card" do
+    card1 = Card.new(card_values[0],card_suits[0])
+    card2 = Card.new(card_values[0],card_suits[0])
+
+    (card1 == card2).must_equal true
+  end
+
+  it "is not equal to another card" do
+    card1 = Card.new(card_values[0],card_suits[0])
+    card2 = Card.new(card_values[1],card_suits[1])
+
+    (card1 == card2).must_equal false
+  end
+
 end
