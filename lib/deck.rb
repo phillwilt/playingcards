@@ -5,7 +5,6 @@ require "card"
 class Deck
   attr_reader :cards
 
-  @@total_cards = 52
   @@card_suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
   @@card_vaues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack",
       "Queen", "King", "Ace"]
@@ -32,7 +31,17 @@ class Deck
   end
 
   def contains(card)
-    return @cards.include?(card)
+    @cards.include?(card)
   end
 
+  def shuffle!(iterations = 10)
+    iterations.times{ @cards.shuffle! }
+  end
+
+  private
+
+  def get_random_num
+    prng = Random.new
+    prng.rand(self.count)
+  end
 end

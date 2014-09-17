@@ -28,7 +28,11 @@ describe Deck do
         deck.contains(card).must_equal true
       end
     end
+  end
 
+  it "has a shuffle method" do
+    deck = Deck.new
+    deck.must_respond_to :shuffle!
   end
 
 end
