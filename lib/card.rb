@@ -13,4 +13,8 @@ class Card
     other_object.suit == self.suit && other_object.value == self.value
   end
 
+  def to_str
+    card_string = value + ' of ' + suit
+  end
+
 end

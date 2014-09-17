@@ -7,7 +7,7 @@ require "card"
 describe Card do
 
   card_suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
-  card_values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack",
+  card_values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack",
       "Queen", "King", "Ace"]
 
   it "has a suit" do
@@ -43,6 +43,16 @@ describe Card do
     card2 = Card.new(card_values[1],card_suits[1])
 
     (card1 == card2).must_equal false
+  end
+
+  it "has a to_str" do
+    card = Card.new(card_values[0],card_suits[0])
+    card.must_respond_to :to_str
+  end
+
+  it "to_str has correct format" do
+    card = Card.new(card_values[0],card_suits[0])
+    card.to_str.must_equal '2 of Spades'
   end
 
 end
