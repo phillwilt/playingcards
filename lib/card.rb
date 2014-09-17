@@ -9,12 +9,11 @@ class Card
     @value = value
   end
 
-  def ==(other_object)
-    other_object.suit == self.suit && other_object.value == self.value
+  def ==(other)
+    other.suit == @suit && other_object.value == @value
   end
 
   def to_str
-    card_string = value + ' of ' + suit
+    "#{@value} of {@suit}"
   end
-
 end
