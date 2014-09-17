@@ -38,6 +38,10 @@ class Deck
     iterations.times{ @cards.shuffle! }
   end
 
+  def draw_card
+    @cards.first
+  end
+
   private
 
   def get_random_num

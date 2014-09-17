@@ -35,4 +35,9 @@ describe Deck do
     deck.must_respond_to :shuffle!
   end
 
+  it "has a draw card method" do
+    deck = Deck.new
+    deck.must_respond_to :draw_card
+  end
+
 end
