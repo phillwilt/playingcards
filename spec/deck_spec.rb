@@ -7,7 +7,7 @@ require "deck"
 describe Deck do
 
   card_suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
-  card_values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack",
+  card_values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack",
       "Queen", "King", "Ace"]
 
   it "has 52 cards" do
