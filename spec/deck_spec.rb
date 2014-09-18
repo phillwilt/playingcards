@@ -24,19 +24,35 @@ describe Deck do
 
         card = Card.new(card_value, card_suit)
 
-        deck.contains(card).must_equal true
+        deck.contains?(card).must_equal true
       end
     end
   end
 
-  it 'has a shuffle method' do
+  it 'verify shuffle has 52 unique cards' do
     deck = Deck.new
-    deck.must_respond_to :shuffle!
+    deck.cards.uniq.size.must_equal 52
   end
 
-  it 'has a draw card method' do
+  it 'verify shuffle randomization' do
     deck = Deck.new
-    deck.must_respond_to :draw_card
+
+    deck.shuffle!
+    set1 = Array.new(deck.cards)
+    deck.shuffle!
+    set2 = Array.new(deck.cards)
+    deck.shuffle!
+    set3 = Array.new(deck.cards)
+
+    # Note: HIGHLY improbable
+    set1.wont_equal set2
+    set1.wont_equal set3
+    set2.wont_equal set3
+  end
+
+  it 'draws a card' do
+    deck = Deck.new
+    deck.draw_card.must_be_kind_of Card
   end
 
 end
