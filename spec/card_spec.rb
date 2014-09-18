@@ -44,14 +44,9 @@ describe Card do
     (card1 == card2).must_equal false
   end
 
-  it 'has a to_str' do
-    card = Card.new(CARD_VALUES[0], CARD_SUITS[0])
-    card.must_respond_to :to_str
-  end
-
   it 'to_str has correct format' do
     card = Card.new(CARD_VALUES[0], CARD_SUITS[0])
-    card.to_str.must_equal '2 of Spades'
+    card.to_s.must_equal '2 of Spades'
   end
 
 end

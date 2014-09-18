@@ -28,7 +28,7 @@ class Deck
     @cards.length
   end
 
-  def contains(card)
+  def contains?(card)
     @cards.include?(card)
   end
 

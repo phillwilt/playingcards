@@ -13,7 +13,7 @@ class Card
     other.suit == @suit && other.value == @value
   end
 
-  def to_str
+  def to_s
     "#{@value} of #{@suit}"
   end
 end
